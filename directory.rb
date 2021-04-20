@@ -41,7 +41,7 @@ def print_header
 end
 def print(students)
   students.each_with_index() do |student,index|
-    puts "#{index+1}. #{student[:name]} (#{student[:cohort]} cohort)"
+    puts "#{index+1}. #{student[:name]} (#{student[:cohort]} cohort)" if student[:name].slice(0) == "a"
   end
 end
 def print_footer(students)
