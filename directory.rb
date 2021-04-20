@@ -42,7 +42,7 @@ def print_header
 end
 def print(students)
   students.each_with_index() do |student,index|
-    puts "#{index+1}. #{student[:name]} (#{student[:cohort]} cohort) and the mischief is #{student[:crime]}"
+    puts "#{index+1}. #{student[:name]} (#{student[:cohort]} cohort) and the mischief is #{student[:crime]}".center (80)
   end
 end
 
