@@ -24,13 +24,14 @@ def input_students
   name = gets.chomp
   #while the name is not empty, repeat this code
   while !name.empty? do
+    puts "what's your favorite misdeed?"
+    my_crime = gets.chomp
     #add the student hash to the array
-    students << {name:name, cohort: :november}
+    students << {name:name, cohort: :november, crime: my_crime}
     puts "Now we have #{students.count} students"
     #get another name from the user
     name = gets.chomp
   end
-#return the array of students
   students
 end
 
@@ -40,20 +41,8 @@ def print_header
   puts "-------------"
 end
 def print(students)
-  total = 0
-  while total < students.count
-  puts "#{students[total][:name]} (#{students[total][:cohort]})"
-  total += 1
-  #puts "Printing students starting with: "
-  #letter = gets.chomp
-  #total = students.count
-  #while total > 0
-  #students.each_with_index() do |student,index|
-    #puts "#{index+1}. #{student[:name]} (#{student[:cohort]} cohort)" if student[:name].slice(0) == letter
-    #puts "#{index+1}. #{student[:name]} (#{student[:cohort]} cohort)" if student[:name].length < 12
-    #puts "#{student[:name]} (#{student[:cohort]} cohort)"
-    #puts "#{students[total][:name]} (#{students[total][:cohort]} cohort)"
-    #total -= 1
+  students.each_with_index() do |student,index|
+    puts "#{index+1}. #{student[:name]} (#{student[:cohort]} cohort) and the mischief is #{student[:crime]}"
   end
 end
 
