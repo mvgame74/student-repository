@@ -41,9 +41,10 @@ def print_header
 end
 def print(students)
   puts "Printing students starting with: "
-  letter = gets.chomp
+  #letter = gets.chomp
   students.each_with_index() do |student,index|
-    puts "#{index+1}. #{student[:name]} (#{student[:cohort]} cohort)" if student[:name].slice(0) == letter
+    #puts "#{index+1}. #{student[:name]} (#{student[:cohort]} cohort)" if student[:name].slice(0) == letter
+    puts "#{index+1}. #{student[:name]} (#{student[:cohort]} cohort)" if student[:name].length < 12
   end
 end
 def print_footer(students)
