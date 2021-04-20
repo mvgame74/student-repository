@@ -40,13 +40,23 @@ def print_header
   puts "-------------"
 end
 def print(students)
-  puts "Printing students starting with: "
+  total = 0
+  while total < students.count
+  puts "#{students[total][:name]} (#{students[total][:cohort]})"
+  total += 1
+  #puts "Printing students starting with: "
   #letter = gets.chomp
-  students.each_with_index() do |student,index|
+  #total = students.count
+  #while total > 0
+  #students.each_with_index() do |student,index|
     #puts "#{index+1}. #{student[:name]} (#{student[:cohort]} cohort)" if student[:name].slice(0) == letter
-    puts "#{index+1}. #{student[:name]} (#{student[:cohort]} cohort)" if student[:name].length < 12
+    #puts "#{index+1}. #{student[:name]} (#{student[:cohort]} cohort)" if student[:name].length < 12
+    #puts "#{student[:name]} (#{student[:cohort]} cohort)"
+    #puts "#{students[total][:name]} (#{students[total][:cohort]} cohort)"
+    #total -= 1
   end
 end
+
 def print_footer(students)
   puts "Overall, we have #{students.count} great students"
 end
