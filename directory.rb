@@ -26,14 +26,10 @@ def input_students
   while !name.empty? do
     puts "what's your cohort"
     my_cohort = gets.chomp
-    if my_cohort == ""
-      my_cohort = "april"
-    end
+    my_cohort = "april" if my_cohort == ""
     puts "what's your favorite misdeed?"
     my_crime = gets.chomp
-    if my_crime == ""
-      my_crime = "unknown"
-    end
+    my_crime = "unknown" if my_crime == ""
     #add the student hash to the array
     students << {name:name, cohort:my_cohort, crime:my_crime}
     puts "Now we have #{students.count} students"
