@@ -5,14 +5,14 @@ def input_students
   #create an empty array
   students = []
   #get the first name
-  name = gets.chomp
+  name = String.new(gets).strip
   #while the name is not empty, repeat this code
   while !name.empty? do
     puts "what's his/her cohort"
-    my_cohort = gets.chomp
+    my_cohort = String.new(gets).stripp
     my_cohort = "april" if my_cohort == ""
     puts "what's his/her favorite misdeed?"
-    my_crime = gets.chomp
+    my_crime = String.new(gets).strip
     my_crime = "unknown" if my_crime == ""
     #add the student hash to the array
     students << {name:name, cohort:my_cohort, crime:my_crime}
