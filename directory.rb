@@ -5,14 +5,14 @@ def input_students
   #create an empty array
   students = []
   #get the first name
-  name = String.new(gets).strip
+  name = gets.chomp
   #while the name is not empty, repeat this code
   while !name.empty? do
     puts "what's his/her cohort"
-    my_cohort = String.new(gets).stripp
+    my_cohort = gets.chomp
     my_cohort = "april" if my_cohort == ""
     puts "what's his/her favorite misdeed?"
-    my_crime = String.new(gets).strip
+    my_crime = gets.chomp
     my_crime = "unknown" if my_crime == ""
     #add the student hash to the array
     students << {name:name, cohort:my_cohort, crime:my_crime}
@@ -33,7 +33,10 @@ def print_header
 end
 
 def print(students)
-  cohorts = students.map do |student|
+  if students.count < 1
+    puts "No student enrolled at this school"
+  else
+    cohorts = students.map do |student|
       student[:cohort]
     end
     cohorts.uniq.each do |cohort|
@@ -42,6 +45,7 @@ def print(students)
           puts "#{student[:name]} and the mischief is #{student[:crime]}" if student[:cohort] == cohort
         end
     end
+  end
 end
 
 def print_footer(students)
